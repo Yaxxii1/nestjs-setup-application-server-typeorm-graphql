@@ -7,16 +7,18 @@ import { join } from 'path';
 import { DataSource, getMetadataArgsStorage } from 'typeorm';
 import { AppController } from './app.controller';
 import { AppService } from './app.service';
+import { ApolloServerPluginLandingPageLocalDefault } from 'apollo-server-core';
 @Module({
   imports: [
     GraphQLModule.forRoot<ApolloDriverConfig>({
       driver: ApolloDriver,
       debug: false,
-      playground: true,
+      playground: false,
+      plugins: [ApolloServerPluginLandingPageLocalDefault()],
       typePaths: ['./**/*.graphql'],
-      definitions: {
-        path: join(process.cwd(), 'src/graphql.ts'),
-      },
+      // definitions: {
+      //   path: join(process.cwd(), 'src/graphql.ts'),
+      // },
     }),
 
     TypeOrmModule.forRoot({
