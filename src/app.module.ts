@@ -7,6 +7,7 @@ import { ApolloServerPluginLandingPageLocalDefault } from 'apollo-server-core';
 import { DataSource, getMetadataArgsStorage } from 'typeorm';
 import { AppController } from './app.controller';
 import { AppService } from './app.service';
+import { UserModule } from './user/user.module';
 @Module({
   imports: [
     GraphQLModule.forRoot<ApolloDriverConfig>({
@@ -30,6 +31,7 @@ import { AppService } from './app.service';
       logging: true,
       useUnifiedTopology: true,
     }),
+    UserModule,
   ],
   controllers: [AppController],
   providers: [AppService],
