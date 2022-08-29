@@ -3,11 +3,10 @@ import { ApolloDriver } from '@nestjs/apollo/dist/drivers';
 import { Module } from '@nestjs/common';
 import { GraphQLModule } from '@nestjs/graphql';
 import { TypeOrmModule } from '@nestjs/typeorm';
-import { join } from 'path';
+import { ApolloServerPluginLandingPageLocalDefault } from 'apollo-server-core';
 import { DataSource, getMetadataArgsStorage } from 'typeorm';
 import { AppController } from './app.controller';
 import { AppService } from './app.service';
-import { ApolloServerPluginLandingPageLocalDefault } from 'apollo-server-core';
 @Module({
   imports: [
     GraphQLModule.forRoot<ApolloDriverConfig>({
