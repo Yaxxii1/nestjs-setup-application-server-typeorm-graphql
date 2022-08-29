@@ -14,6 +14,9 @@ const FE_URL: string = process.env.FE_URL || 'xxx';
 const RATE_LIMIT_MAX: number = +process.env.RATE_LIMIT_MAX || 10000;
 const GRAPHQL_DEPTH_LIMIT: number = +process.env.GRAPHQL_DEPTH_LIMIT || 3;
 
+// bcrypt
+const BCRYPT_SALT: number = +process.env.BCRYPT_SALT || 10;
+
 export {
   NODE_ENV,
   PRIMARY_COLOR,
@@ -24,4 +27,5 @@ export {
   FE_URL,
   RATE_LIMIT_MAX,
   GRAPHQL_DEPTH_LIMIT,
+  BCRYPT_SALT,
 };
